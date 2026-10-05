@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estágio Fácil: plataforma para divulgar e encontrar vagas de estágio.">
+  <title>Estágio Fácil | Vagas de estágio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="#inicio" class="logo"><!--<span class="logo-mark" aria-hidden="true">E</span>--> Estágio Fácil</a>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#cadastrar">Cadastrar vaga</a></li>
+        <li><a href="#vagas">Vagas disponíveis</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <p class="slogan">Encontre sua oportunidade. Comece sua carreira.</p>
+          <h1>Encontre o estágio que pode transformar sua carreira</h1>
+          <p class="hero-text">Conectamos estudantes em busca de experiência profissional com empresas que procuram novos talentos.</p>
+          <div class="hero-actions">
+            <a href="#cadastrar" class="btn btn-primary">Cadastrar uma vaga</a>
+            <a href="#vagas" class="btn btn-outline">Ver vagas</a>
+          </div>
+        </div>
+
+        <!-- Composição visual feita com CSS -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="job-card job-1"><span class="job-dot"></span><b>Estágio em TI</b><small>Híbrido • 6 horas</small></div>
+          <div class="job-card job-2"><span class="job-dot job-dot-green"></span><b>Estágio em Marketing</b><small>Remoto • 4 horas</small></div>
+          <div class="job-card job-3"><span class="job-dot job-dot-orange"></span><b>Estágio em Administração</b><small>Presencial • 5 horas</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POR QUE USAR ===== -->
+    <section class="section">
+      <div class="container">
+        <h2 class="center">Por que utilizar o Estágio Fácil?</h2>
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-icon">🎓</div>
+            <h3>Para estudantes</h3>
+            <p>Encontre oportunidades de estágio e dê o primeiro passo para sua carreira.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🏢</div>
+            <h3>Para empresas</h3>
+            <p>Divulgue suas oportunidades e encontre novos talentos.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🚀</div>
+            <h3>Oportunidades</h3>
+            <p>Tenha acesso a vagas de diferentes áreas e níveis de experiência.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORMULÁRIO ===== -->
+    <section class="section section-gray" id="cadastrar">
+      <div class="container form-wrap">
+        <h2 class="center">Cadastre uma vaga de estágio</h2>
+
+        <!-- Área de mensagens (preenchida pelo JavaScript) -->
+        <div id="mensagem" class="mensagem" role="status" aria-live="polite" hidden></div>
+
+        <!-- novalidate: a validação é feita pelo nosso JavaScript -->
+        <form id="form-vaga" class="form" novalidate>
+
+          <div class="campo">
+            <label for="empresa">Nome da empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Ex.: Tech Solutions" required>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="cargo">Cargo / Área</label>
+            <input type="text" id="cargo" name="cargo" placeholder="Ex.: Estágio em Administração" required>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="modalidade">Modalidade</label>
+            <select id="modalidade" name="modalidade" required>
+              <option value="">Selecione</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Híbrido">Híbrido</option>
+              <option value="Remoto">Remoto</option>
+            </select>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Ex.: Fortaleza - CE" required>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="bolsa">Bolsa-auxílio</label>
+            <input type="text" id="bolsa" name="bolsa" placeholder="Ex.: R$ 800,00" required>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo">
+            <label for="carga">Carga horária</label>
+            <select id="carga" name="carga" required>
+              <option value="">Selecione</option>
+              <option value="4 horas">4 horas</option>
+              <option value="5 horas">5 horas</option>
+              <option value="6 horas">6 horas</option>
+            </select>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo campo-full">
+            <label for="descricao">Descrição da vaga</label>
+            <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva as atividades e requisitos da vaga" required></textarea>
+            <span class="erro"></span>
+          </div>
+
+          <div class="campo campo-full">
+            <label for="link">Link para candidatura</label>
+            <input type="url" id="link" name="link" placeholder="https://empresa.com.br/vagas" required>
+            <span class="erro"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary campo-full">Publicar vaga</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== TABELA DE VAGAS ===== -->
+    <section class="section" id="vagas">
+      <div class="container">
+        <div class="vagas-topo">
+          <h2>Vagas disponíveis</h2>
+          <span class="contador" id="contador">0 vagas encontradas</span>
+        </div>
+
+        <!-- Wrapper permite rolagem horizontal no celular -->
+        <div class="tabela-wrap">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Empresa</th><th>Vaga</th><th>Modalidade</th><th>Local</th>
+                <th>Bolsa</th><th>Carga horária</th><th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-vagas"><!-- linhas criadas pelo script.js --></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <strong class="footer-logo">Estágio Fácil</strong>
+      <p>Conectando estudantes e empresas para construir novas oportunidades.</p>
+      <p class="copy">© 2026 Estágio Fácil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
